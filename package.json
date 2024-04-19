@@ -1,8 +1,8 @@
 {
-  "name": "deskreen",
-  "productName": "Deskreen",
-  "version": "2.0.4",
-  "description": "Deskreen turns any device into a secondary screen for your computer",
+  "name": "screen_mirror",
+  "productName": "Screen Mirror",
+  "version": "1.0.0",
+  "description": "Turns any device into a secondary screen for your computer",
   "scripts": {
     "build": "yarn build-client && yarn build-main && yarn build-renderer",
     "build-test": "yarn build-main-test && yarn build-renderer-test && yarn build-client",
@@ -121,14 +121,14 @@
     },
     "publish": {
       "provider": "github",
-      "owner": "pavlobu",
-      "repo": "deskreen",
+      "owner": "dsmalicsi",
+      "repo": "screen_mirror",
       "private": false
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pavlobu/deskreen.git"
+    "url": "git+https://github.com/dsmalicsi/screen_mirror.git"
   },
   "author": {
     "name": "Pavlo (Paul) Buidenkov",
@@ -140,11 +140,16 @@
       "name": "Pavlo (Paul) Buidenkov",
       "email": "pavlobu@gmail.com",
       "url": "https://github.com/pavlobu"
-    }
+    },
+    {
+      "name": "Daryll Malicsi",
+      "email": "dsmalicsi@gmail.com",
+      "url": "https://github.com/dsmalicsi"
+    },
   ],
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/pavlobu/deskreen/issues"
+    "url": "https://github.com/dsmalicsi/screen_mirror/issues"
   },
   "keywords": [
     "electron",
@@ -157,7 +162,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/pavlobu/deskreen#readme",
+  "homepage": "https://github.com/dsmalicsi/screen_mirror#readme",
   "jest": {
     "testURL": "http://localhost/",
     "coveragePathIgnorePatterns": [
