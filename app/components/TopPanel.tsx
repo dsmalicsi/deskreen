@@ -195,7 +195,8 @@ export default function TopPanel(props: any) {
               Screen Mirror
             </h4>
           </Button>
-        <p><small>For internal use of Ordermo employees only.</small></p>
+        <p>Turn any device into a wireless secondary monitor 💚</p>
+        <p><small>(For internal use of Ordermo employees only)</small></p>
 
         {/*</Tooltip>*/}
       </div>
