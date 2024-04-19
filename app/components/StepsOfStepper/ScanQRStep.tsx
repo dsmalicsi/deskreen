@@ -118,7 +118,7 @@ const ScanQRStep: React.FC = () => {
               fgColor={isDarkTheme ? '#ffffff' : '#000000'}
               imageSettings={{
                 // TODO: change image to app icon
-                src: `http://127.0.0.1:${CLIENT_VIEWER_PORT}/logo192.png`,
+                src: `http://127.0.0.1:${CLIENT_VIEWER_PORT}/icon-512.png`,
                 width: 40,
                 height: 40,
               }}
@@ -175,7 +175,7 @@ const ScanQRStep: React.FC = () => {
               renderAs="svg"
               imageSettings={{
                 // TODO: change image to app icon
-                src: `http://127.0.0.1:${CLIENT_VIEWER_PORT}/logo192.png`,
+                src: `http://127.0.0.1:${CLIENT_VIEWER_PORT}/icon-512.png`,
                 width: 25,
                 height: 25,
               }}

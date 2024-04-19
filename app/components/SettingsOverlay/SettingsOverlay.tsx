@@ -1,19 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { ipcRenderer, shell } from 'electron';
-import React, { useContext, useEffect, useState } from 'react';
+import { ipcRenderer,
+  // shell
+} from 'electron';
+import React, { useContext, useEffect,
+  // useState
+} from 'react';
 import {
   Overlay,
   Classes,
   H3,
   H6,
-  H4,
+  // H4,
   Tabs,
   Tab,
   Icon,
   Text,
-  Checkbox,
+  // Checkbox,
 } from '@blueprintjs/core';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from 'react-flexbox-grid';
@@ -27,7 +31,7 @@ import CloseOverlayButton from '../CloseOverlayButton';
 import SettingRowLabelAndInput from './SettingRowLabelAndInput';
 import isWithReactRevealAnimations from '../../utils/isWithReactRevealAnimations';
 import config from '../../api/config';
-import LanguageSelector from '../LanguageSelector';
+// import LanguageSelector from '../LanguageSelector';
 import ToggleThemeBtnGroup from '../ToggleThemeBtnGroup';
 
 const { port } = config;
@@ -59,8 +63,8 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
 
   const { handleClose, isSettingsOpen } = props;
 
-  const [latestVersion, setLatestVersion] = useState('');
-  const [currentVersion, setCurrentVersion] = useState('');
+  // const [latestVersion, setLatestVersion] = useState('');
+  // const [currentVersion, setCurrentVersion] = useState('');
 
   const { isDarkTheme } = useContext(SettingsContext);
 
@@ -68,14 +72,14 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
     const getLatestVersion = async () => {
       const gotLatestVersion = await ipcRenderer.invoke('get-latest-version');
       if (gotLatestVersion !== '') {
-        setLatestVersion(gotLatestVersion);
+        // setLatestVersion(gotLatestVersion);
       }
     };
     getLatestVersion();
     const getCurrentVersion = async () => {
       const gotCurrentVersion = await ipcRenderer.invoke('get-current-version');
       if (gotCurrentVersion !== '') {
-        setCurrentVersion(gotCurrentVersion);
+        // setCurrentVersion(gotCurrentVersion);
       }
     };
     getCurrentVersion();
@@ -83,15 +87,15 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
 
   const getClassesCallback = useStylesWithTheme(isDarkTheme);
 
-  const getAutomaticUpdatesCheckboxInput = () => {
-    return (
-      <Checkbox
-        disabled
-        className={getClassesCallback().checkboxSettings}
-        label={t('Disabled')}
-      />
-    );
-  };
+  // const getAutomaticUpdatesCheckboxInput = () => {
+  //   return (
+  //     <Checkbox
+  //       disabled
+  //       className={getClassesCallback().checkboxSettings}
+  //       label={t('Disabled')}
+  //     />
+  //   );
+  // };
 
   const GeneralSettingsPanel: React.FC = () => (
     <>
@@ -103,16 +107,16 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
         label={t('Color Theme')}
         input={<ToggleThemeBtnGroup />}
       />
-      <SettingRowLabelAndInput
-        icon="translate"
-        label={t('Language')}
-        input={<LanguageSelector />}
-      />
-      <SettingRowLabelAndInput
-        icon="automatic-updates"
-        label={t('Automatic Updates')}
-        input={getAutomaticUpdatesCheckboxInput()}
-      />
+      {/*<SettingRowLabelAndInput*/}
+      {/*  icon="translate"*/}
+      {/*  label={t('Language')}*/}
+      {/*  input={<LanguageSelector />}*/}
+      {/*/>*/}
+      {/*<SettingRowLabelAndInput*/}
+      {/*  icon="automatic-updates"*/}
+      {/*  label={t('Automatic Updates')}*/}
+      {/*  input={getAutomaticUpdatesCheckboxInput()}*/}
+      {/*/>*/}
     </>
   );
 
@@ -137,57 +141,59 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
       <div>
         <Col xs={12}>
           <img
-            src={`http://127.0.0.1:${port}/logo512.png`}
+            src={`http://127.0.0.1:${port}/icon-512.png`}
             alt="logo"
             style={{ width: '100px' }}
           />
         </Col>
         <Col xs={12}>
-          <H3>{t('About Deskreen')}</H3>
+          <H3>{t('Screen Mirror')}</H3>
         </Col>
         <Col xs={12}>
           <Text>
-            {`${t('Version')}: ${currentVersion} (${currentVersion})`}
+            {/*{`${t('Version')}: ${currentVersion} (${currentVersion})`}*/}
+            {`${t('Version')}: 1.0`}
           </Text>
         </Col>
         <Col xs={12}>
           <Text>
-            {`${t('Copyright')} © ${new Date().getFullYear()} `}
-            <a
-              onClick={() => {
-                shell.openExternal('https://linkedin.com/in/pavlobu');
-              }}
-              style={
-                isDarkTheme
-                  ? {}
-                  : {
-                      color: 'blue',
-                    }
-              }
-            >
-              Pavlo Buidenkov (Paul)
-            </a>
+            Built for Internal Use of Ordermo Employees
+            {/*{`${t('Copyright')} © ${new Date().getFullYear()} `}*/}
+            {/*<a*/}
+            {/*  onClick={() => {*/}
+            {/*    shell.openExternal('https://linkedin.com/in/pavlobu');*/}
+            {/*  }}*/}
+            {/*  style={*/}
+            {/*    isDarkTheme*/}
+            {/*      ? {}*/}
+            {/*      : {*/}
+            {/*          color: 'blue',*/}
+            {/*        }*/}
+            {/*  }*/}
+            {/*>*/}
+            {/*  Pavlo Buidenkov (Paul)*/}
+            {/*</a>*/}
           </Text>
         </Col>
-        <Col xs={12}>
-          <Text>
-            {`${t('Website')}: `}
-            <a
-              onClick={() => {
-                shell.openExternal('https://deskreen.com');
-              }}
-              style={
-                isDarkTheme
-                  ? {}
-                  : {
-                      color: 'blue',
-                    }
-              }
-            >
-              https://deskreen.com
-            </a>
-          </Text>
-        </Col>
+        {/*<Col xs={12}>*/}
+        {/*  <Text>*/}
+        {/*    {`${t('Website')}: `}*/}
+        {/*    <a*/}
+        {/*      onClick={() => {*/}
+        {/*        shell.openExternal('https://deskreen.com');*/}
+        {/*      }}*/}
+        {/*      style={*/}
+        {/*        isDarkTheme*/}
+        {/*          ? {}*/}
+        {/*          : {*/}
+        {/*              color: 'blue',*/}
+        {/*            }*/}
+        {/*      }*/}
+        {/*    >*/}
+        {/*      https://deskreen.com*/}
+        {/*    </a>*/}
+        {/*  </Text>*/}
+        {/*</Col>*/}
       </div>
     </Row>
   );
@@ -254,27 +260,27 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
               onClick={handleClose}
               isDefaultStyles
             />
-            {latestVersion !== '' &&
-            currentVersion !== '' &&
-            latestVersion !== currentVersion ? (
-              <H4
-                id="new-version-header"
-                onClick={(e) => {
-                  e.preventDefault();
-                  shell.openExternal('https://deskreen.com');
-                }}
-                style={{
-                  width: 'calc(100% - 50px)',
-                }}
-              >
-                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-                {`${t(
-                  'A new version of Deskreen is available! Click to download new version'
-                )} ${latestVersion}`}
-              </H4>
-            ) : (
-              <></>
-            )}
+            {/*{latestVersion !== '' &&*/}
+            {/*currentVersion !== '' &&*/}
+            {/*latestVersion !== currentVersion ? (*/}
+            {/*  <H4*/}
+            {/*    id="new-version-header"*/}
+            {/*    onClick={(e) => {*/}
+            {/*      e.preventDefault();*/}
+            {/*      shell.openExternal('https://deskreen.com');*/}
+            {/*    }}*/}
+            {/*    style={{*/}
+            {/*      width: 'calc(100% - 50px)',*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    /!* eslint-disable-next-line react/jsx-one-expression-per-line *!/*/}
+            {/*    {`${t(*/}
+            {/*      'A new version of Deskreen is available! Click to download new version'*/}
+            {/*    )} ${latestVersion}`}*/}
+            {/*  </H4>*/}
+            {/*) : (*/}
+            {/*  <></>*/}
+            {/*)}*/}
             <Tabs
               animate
               id="TabsExample"

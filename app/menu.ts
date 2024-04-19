@@ -61,12 +61,12 @@ export default class MenuBuilder {
       label: 'Deskreen',
       submenu: [
         {
-          label: this.i18n.t('About Deskreen'),
+          label: 'About Screen Mirror',//this.i18n.t('About Deskreen'),
           selector: 'orderFrontStandardAboutPanel:',
         },
         { type: 'separator' },
         {
-          label: this.i18n.t('Hide Deskreen'),
+          label: 'Hide Screen Mirror',// this.i18n.t('Hide Deskreen'),
           accelerator: 'Command+H',
           selector: 'hide:',
         },

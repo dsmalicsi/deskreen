@@ -39,7 +39,10 @@ function ErrorDialog(props: ErrorDialogProps) {
     >
       <Row center="xs" style={{ marginTop: '10px' }}>
         <Col xs={12}>
-          <H3 className={Classes.TEXT_MUTED}>{t('Deskreen Error Dialog')}</H3>
+          <H3 className={Classes.TEXT_MUTED}>
+            Error
+            {/*{t('Deskreen Error Dialog')}*/}
+          </H3>
         </Col>
       </Row>
       <Row middle="xs" center="xs" style={{ padding: '20px', width: '100%' }}>
