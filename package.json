@@ -2,7 +2,7 @@
   "name": "screen_mirror",
   "productName": "Screen Mirror",
   "version": "1.0.0",
-  "description": "Turns any device into a secondary screen for your computer",
+  "description": "Turn any device into a wireless secondary monitor",
   "scripts": {
     "build": "yarn build-client && yarn build-main && yarn build-renderer",
     "build-test": "yarn build-main-test && yarn build-renderer-test && yarn build-client",
