@@ -192,9 +192,11 @@ export default function TopPanel(props: any) {
                 transform: 'translateY(-3px)',
               }}
             >
-              OM Screen Mirror
+              Screen Mirror
             </h4>
           </Button>
+        <p><small>For internal use of Ordermo employees only.</small></p>
+
         {/*</Tooltip>*/}
       </div>
     );
@@ -206,7 +208,7 @@ export default function TopPanel(props: any) {
         <Row
           middle="xs"
           center="xs"
-          style={{ width: '100%', transform: 'translateX(-50px)' }}
+          style={{ width: '100%' }}
         >
           {/*<Col>{renderDonateButton()}</Col>*/}
           <Col>{renderLogoWithAppName()}</Col>

@@ -152,12 +152,12 @@ export default function SettingsOverlay(props: SettingsOverlayProps) {
         <Col xs={12}>
           <Text>
             {/*{`${t('Version')}: ${currentVersion} (${currentVersion})`}*/}
-            {`${t('Version')}: 1.0`}
+            {`${t('Version')}: 1.0.0`}
           </Text>
         </Col>
         <Col xs={12}>
           <Text>
-            Built for Internal Use of Ordermo Employees
+            For Internal Use of Ordermo employees only. Do not distribute.
             {/*{`${t('Copyright')} © ${new Date().getFullYear()} `}*/}
             {/*<a*/}
             {/*  onClick={() => {*/}
