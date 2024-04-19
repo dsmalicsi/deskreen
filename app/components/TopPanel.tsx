@@ -3,7 +3,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { shell } from 'electron';
 import React, { useCallback, useContext } from 'react';
-import { Button, Text, Icon, Position, Tooltip } from '@blueprintjs/core';
+import { Button,
+  Text,
+  Icon, Position, Tooltip } from '@blueprintjs/core';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Col, Row } from 'react-flexbox-grid';
 import { useTranslation } from 'react-i18next';
@@ -195,8 +197,16 @@ export default function TopPanel(props: any) {
               Screen Mirror
             </h4>
           </Button>
-        <p>Turn any device into a wireless secondary monitor 💚</p>
-        <p><small>(For internal use of Ordermo employees only)</small></p>
+        <p style={{
+          lineHeight: 1,
+          marginBottom: "-24px"
+        }}>
+          <small>
+            Turn any device into a wireless secondary monitor 💚
+            <br/>
+            <i>(for internal use of Ordermo employees only)</i>
+          </small>
+        </p>
 
         {/*</Tooltip>*/}
       </div>

@@ -96,7 +96,7 @@ const ScanQRStep: React.FC = () => {
               borderRadius: '20px',
             }}
           >
-              Make sure your computer and screen viewing device are connected to the same Wi-Fi network.
+              Make sure your computer and screen device are connected to the same Wi-Fi network. 5GHz recommended.
             {/*{t(*/}
             {/*  'Make sure your computer and screen viewing device are connected to same Wi-Fi'*/}
             {/*)}*/}
